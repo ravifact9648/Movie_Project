@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%load my_filter%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {%if movielist%}
+    <table border="2px">
+      <thead>
+        <td>Movie Name</td>
+        <td>Movie Hero Name</td>
+        <td>Movie Heroine Name</td>
+        <td>Movie Release Date</td>
+        <td>Movie Rating</td>
+      </thead>
+      {%for movie in movielist%}
+      <tr>
+        <td>{{movie.movie_name|upper}}</td>
+        <td>{{movie.movie_hero_name|title}}</td>
+        <td>{{movie.movie_heroine_name|cap}}</td>
+        <td>{{movie.movie_date}}</td>
+        <td>{{movie.movie_rating}}</td>
+      </tr>
+
+      {%endfor%}
+    </table>
+    {%endif%}
+    <form class="" action="/">
+      <input type="submit" name="" value="Main Page">
+    </form>
+  </body>
+</html>
